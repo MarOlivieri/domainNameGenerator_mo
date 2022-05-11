@@ -12,9 +12,12 @@ window.onload = function() {
 
 let pronoun = ["the", "our"];
 let adj = ["great", "big"];
-let noun = ["jogger", "racoon", "leones"];
+let noun = ["jogger", "racoon", "leones", "capcom"];
 let extension = [".es", ".com", ".net"];
 
+//esta funcion comprueba si coincide la extensión conlas últimas letras del nombre
+//declaro una variable tam, a la que asigno el tamaño de la extension -1
+//para solo comprobar ese número de letras de la palabra
 function coincide(nombre, ext) {
   let tam = ext.length - 1;
   let comp = true;
@@ -32,7 +35,10 @@ for (let i = 0; i < pronoun.length; i++) {
     for (let j = 0; j < noun.length; j++) {
       for (let r = 0; r < extension.length; r++) {
         if (coincide(noun[j], extension[r])) {
-          //console.log("coincide");
+          //si coinciden las últimas leras del nombre con la extension sin el punto
+          //convierto el nombre en un array, le corto el numero de letras exacto a la extension-1
+          //e introduzco la extension en el array, despues convierto el array en string y lo junto
+          //a las cadenas de texto
           let arr = noun[j].split("");
           let tamext = extension[r].length - 1;
           let narr = arr.slice(0, arr.length - tamext);
