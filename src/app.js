@@ -12,7 +12,7 @@ window.onload = function() {
 
 let pronoun = ["the", "our"];
 let adj = ["great", "big"];
-let noun = ["jogger", "racoon"];
+let noun = ["jogger", "racoon", "leones"];
 let extension = [".es", ".com", ".net"];
 
 function coincide(nombre, ext) {
@@ -31,8 +31,17 @@ for (let i = 0; i < pronoun.length; i++) {
   for (let t = 0; t < adj.length; t++) {
     for (let j = 0; j < noun.length; j++) {
       for (let r = 0; r < extension.length; r++) {
-        if (coincide(noun[j], extension[r])) console.log("coincide");
-        else console.log(pronoun[i] + adj[t] + noun[j] + extension[r]);
+        if (coincide(noun[j], extension[r])) {
+          //console.log("coincide");
+          let arr = noun[j].split("");
+          let tamext = extension[r].length - 1;
+          let narr = arr.slice(0, arr.length - tamext);
+          for (let n = 0; n < extension[r].length; n++) {
+            narr.push(extension[r][n]);
+          }
+          let palabrafinal = narr.join("");
+          console.log(pronoun[i] + adj[t] + palabrafinal);
+        } else console.log(pronoun[i] + adj[t] + noun[j] + extension[r]);
       }
     }
   }
