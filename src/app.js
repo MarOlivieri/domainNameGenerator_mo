@@ -7,6 +7,10 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
+  const pronoun= ["the", "our"];
+  const adj = ["great", "big"];
+  const noun = ["jogger", "racoon", "leones", "capcom"];
+  const extension = [".es", ".com", ".net"];
   console.log("Hello Rigo from the console!");
 };
 
